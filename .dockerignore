@@ -1,0 +1,4 @@
+README.*
+.gitlab-ci.yml
+.gitignore
+.git/

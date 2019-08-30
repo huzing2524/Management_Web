@@ -29,11 +29,11 @@ module.exports = {
             '/api': {
                 // target: 'https://dsd.bb.tenv.dsdcoin.app/bbapi',
                 target:
-                // 'https://admin.dsdcoin.app/bbapi',
+                // 'https://admin.tenv.dsdcoin.app/bbapi',
                 // 'http://192.168.2.89:8000',
-                    'http://192.168.0.126:8000',
+                    'http://10.10.10.29:9000',
                 // 'https://app.tenv.dsdiot.com/bbapi',
-                // 'https://bb.dsdcoin.app/bbapi',
+                // 'https://admin.tenv.dsdiot.com',
                 // 'http://192.168.1.181:8080',
                 ws: true,
                 changeOrigin: true,

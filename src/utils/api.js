@@ -30,16 +30,16 @@ export function setImageUrl(id) {
 
 //后台登录
 export const getBglogin = (auth) => {
-    return http.httpAuth('/bg/login/', auth)
+    return http.httpAuth('/bg/login', auth)
 }
 
 //获取后台列表
 export function GetBglist(params) {
-    return http.httpGet('/bg/list/', params)
+    return http.httpGet('/bg/list', params)
 }
 
 export function postBgauth(params) {
-    return http.httpPost('/bg/auth/', params)
+    return http.httpPost('/bg/auth', params)
 }
 
 /**
@@ -48,25 +48,25 @@ export function postBgauth(params) {
  * @returns {*}
  */
 export const GetFacsList = async(params) => {
-    return http.httpGet('bg/facs/list/', params)
+    return http.httpGet('bg/facs/list', params)
 }
 export const GetFacNamesList = async(params) => {
-    return http.httpGet('/bg/facs/names/', params)
+    return http.httpGet('/bg/facs/names', params)
 }
 export function postFacsModify(params) {
-    return http.httpPost('/facs/modify/', params)
+    return http.httpPost('/facs/modify', params)
 }
 
 export function postFacsNew(params) {
-    return http.httpPost('/facs/new/', params)
+    return http.httpPost('/facs/new', params)
 }
 
 export function postFacsDel(params) {
-    return http.httpPost('/facs/del/', params)
+    return http.httpPost('/facs/del', params)
 }
 
 export function getActivityRecognition(params) {
-    return http.httpGet('/activity/recognition/image/list/', params)
+    return http.httpGet('/activity/recognition/image/list', params)
 }
 
 /**
@@ -76,7 +76,7 @@ export function getActivityRecognition(params) {
  * @constructor
  */
 export const GetUserList = async(params) => {
-        return http.httpGet('/bg/user/list/', params)
+        return http.httpGet('/bg/user/list', params)
     }
     /**
      * 用户统计信息
@@ -85,7 +85,7 @@ export const GetUserList = async(params) => {
      * @constructor
      */
 export const GetUserStats = async(params) => {
-        return http.httpGet('/bg/user/stats/', params)
+        return http.httpGet('/bg/user/stats', params)
     }
     /**
      * dsd记录查询
@@ -94,10 +94,10 @@ export const GetUserStats = async(params) => {
      * @constructor
      */
 export const GetDsdList = async(params) => {
-    return http.httpGet('/bg/dsd/list/', params)
+    return http.httpGet('/bg/dsd/list', params)
 }
 export const GrantDsd = async(params) => {
-        return http.httpPost('/bg/dsd/grant/', params)
+        return http.httpPost('/bg/dsd/grant', params)
     }
     /**
      * 反馈记录查询
@@ -106,7 +106,7 @@ export const GrantDsd = async(params) => {
      * @constructor
      */
 export const GetFeedbackList = async(params) => {
-        return http.httpGet('/bg/feedback/list/', params)
+        return http.httpGet('/bg/feedback/list', params)
     }
     /**
      * 用户反馈回复
@@ -115,7 +115,7 @@ export const GetFeedbackList = async(params) => {
      * @constructor
      */
 export function FeedbackResp(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/feedback/resp/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/feedback/resp' + (path || ''), params)
 }
 /**
  * 企业申请列表
@@ -124,7 +124,7 @@ export function FeedbackResp(params, methods, path) {
  * @constructor
  */
 export const GetExamineList = async(params) => {
-        return http.httpGet('/bg/examine/list/', params)
+        return http.httpGet('/bg/examine/list', params)
     }
     /**
      * 企业申请确认
@@ -134,7 +134,7 @@ export const GetExamineList = async(params) => {
      * @constructor
      */
 export const ToExamine = async(params, id) => {
-        return http.httpPost(`/bg/examine/${id}/`, params)
+        return http.httpPost(`/bg/examine/${id}`, params)
     }
     /**
      * 获取应用列表
@@ -143,10 +143,10 @@ export const ToExamine = async(params, id) => {
      * @constructor
      */
 export const GetApps = async(params) => {
-    return http.httpGet('/bg/apps/', params)
+    return http.httpGet('/bg/apps', params)
 }
 export function ApplicationApps(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/apps/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/apps' + (path || ''), params)
 }
 /**
  * 修改应用状态,隐藏/显示
@@ -155,7 +155,7 @@ export function ApplicationApps(params, methods, path) {
  * @constructor
  */
 export function ApplicationAppsState(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/apps/state/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/apps/state' + (path || ''), params)
 }
 /**
  * xd图片
@@ -164,7 +164,7 @@ export function ApplicationAppsState(params, methods, path) {
  * @constructor
  */
 export function LearningXdImages(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/xd/images/tag/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/xd/images/tag' + (path || ''), params)
 }
 /**
  * xd学习任务
@@ -173,7 +173,7 @@ export function LearningXdImages(params, methods, path) {
  * @constructor
  */
 export function LearningXdTasks(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/xd/tasks/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/xd/tasks' + (path || ''), params)
 }
 /**
  * 关键词
@@ -230,6 +230,89 @@ export function StoreList(params, methods, path) {
     return ArrangeHttpMethod(methods)('/bg/manufacturing/store/list' + (path || ''), params)
 }
 
+// --------------------------------------------
+
+/**
+ * 智能制造使用情况-订单
+ * @param params
+ * @returns {Promise<*>}
+ * @constructor
+ */
+export function OrderList(params, methods, path) {
+    return ArrangeHttpMethod(methods)('/bg/manufacturing/order/list' + (path || ''), params)
+}
+
+/**
+ * 智能制造使用情况-生产任务单
+ * @param params
+ * @returns {Promise<*>}
+ * @constructor
+ */
+export function ProductList(params, methods, path) {
+    return ArrangeHttpMethod(methods)('/bg/manufacturing/product/list' + (path || ''), params)
+}
+
+/**
+ * 智能制造使用情况-采购单
+ * @param params
+ * @returns {Promise<*>}
+ * @constructor
+ */
+export function PurchaseList(params, methods, path) {
+    return ArrangeHttpMethod(methods)('/bg/manufacturing/purchase/list' + (path || ''), params)
+}
+
+/**
+ * 智能制造使用情况-发货单
+ * @param params
+ * @returns {Promise<*>}
+ * @constructor
+ */
+export function InvoiceList(params, methods, path) {
+    return ArrangeHttpMethod(methods)('/bg/manufacturing/invoice/list' + (path || ''), params)
+}
+
+/**
+ * 智能制造使用情况-领料单
+ * @param params
+ * @returns {Promise<*>}
+ * @constructor
+ */
+export function PickingList(params, methods, path) {
+    return ArrangeHttpMethod(methods)('/bg/manufacturing/picking/list' + (path || ''), params)
+}
+
+/**
+ * 智能制造使用情况-完工入库单
+ * @param params
+ * @returns {Promise<*>}
+ * @constructor
+ */
+export function StorageList(params, methods, path) {
+    return ArrangeHttpMethod(methods)('/bg/manufacturing/completed_storage/list' + (path || ''), params)
+}
+
+/**
+ * 智能制造使用情况-盘点审批单
+ * @param params
+ * @returns {Promise<*>}
+ * @constructor
+ */
+export function CheckList(params, methods, path) {
+    return ArrangeHttpMethod(methods)('/bg/manufacturing/storage_check/list' + (path || ''), params)
+}
+
+/**
+ * 智能制造使用情况-临时申购单
+ * @param params
+ * @returns {Promise<*>}
+ * @constructor
+ */
+export function TemporaryPurchaseList(params, methods, path) {
+    return ArrangeHttpMethod(methods)('/bg/manufacturing/temporary_purchase/list' + (path || ''), params)
+}
+
+// ------------------------------------------
 /**
  * 新增企业信息
  * @param params
@@ -237,7 +320,7 @@ export function StoreList(params, methods, path) {
  * @constructor
  */
 export function FacsNew(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/facs/new/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/facs/new' + (path || ''), params)
 }
 
 /**
@@ -247,7 +330,7 @@ export function FacsNew(params, methods, path) {
  * @constructor
  */
 export function FacsModify(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/facs/modify/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/facs/modify' + (path || ''), params)
 }
 
 /**
@@ -257,7 +340,7 @@ export function FacsModify(params, methods, path) {
  * @constructor
  */
 export function RightsList(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/rights/list/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/rights/list' + (path || ''), params)
 }
 
 /**
@@ -267,7 +350,7 @@ export function RightsList(params, methods, path) {
  * @constructor
  */
 export function RightsNew(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/rights/new/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/rights/new' + (path || ''), params)
 }
 
 /**
@@ -277,7 +360,7 @@ export function RightsNew(params, methods, path) {
  * @constructor
  */
 export function RightsDel(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/rights/del/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/rights/del' + (path || ''), params)
 }
 
 /**
@@ -287,7 +370,7 @@ export function RightsDel(params, methods, path) {
  * @constructor
  */
 export function RightsPassword(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/rights/password/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/rights/password' + (path || ''), params)
 }
 
 /**
@@ -297,7 +380,7 @@ export function RightsPassword(params, methods, path) {
  * @constructor
  */
 export function RightsName(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/rights/name/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/rights/name' + (path || ''), params)
 }
 
 /**
@@ -307,7 +390,7 @@ export function RightsName(params, methods, path) {
  * @constructor
  */
 export function FacsAdmins(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/facs/admins/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/facs/admins' + (path || ''), params)
 }
 
 /**
@@ -327,7 +410,7 @@ export function FacsAdminsDel(params, methods, path) {
  * @constructor
  */
 export function IndustryExamine(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/industry_plus/examine/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/industry_plus/examine' + (path || ''), params)
 }
 
 /**
@@ -337,7 +420,7 @@ export function IndustryExamine(params, methods, path) {
  * @constructor
  */
 export function IndustryTest(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/industry_plus/test/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/industry_plus/test' + (path || ''), params)
 }
 
 //v3.4.0
@@ -348,7 +431,7 @@ export function IndustryTest(params, methods, path) {
  * @constructor
  */
 export function InviteFactory(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/invite/factory/list/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/invite/factory/list' + (path || ''), params)
 }
 
 /**
@@ -358,7 +441,7 @@ export function InviteFactory(params, methods, path) {
  * @constructor
  */
 export function InviteFriend(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/invite/friend/list/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/invite/friend/list' + (path || ''), params)
 }
 
 /**
@@ -368,5 +451,5 @@ export function InviteFriend(params, methods, path) {
  * @constructor
  */
 export function BannerOptions(params, methods, path) {
-    return ArrangeHttpMethod(methods)('/bg/banner/' + (path || ''), params)
+    return ArrangeHttpMethod(methods)('/bg/banner' + (path || ''), params)
 }

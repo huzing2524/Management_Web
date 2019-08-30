@@ -41,6 +41,7 @@
           label="被邀请人姓名">
         </el-table-column>
         <el-table-column
+          width="120"
           header-align="center"
           align="center"
           prop="invited_phone"
@@ -65,6 +66,7 @@
           </template>
         </el-table-column>
         <el-table-column
+          width="180"
           header-align="center"
           align="center"
           prop="reward"
